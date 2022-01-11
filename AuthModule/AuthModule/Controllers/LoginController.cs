@@ -62,7 +62,5 @@ namespace AuthModule.Controllers
         public ActionResult Logout() {
             return View();
         }
-        public record LoginUser(string UserName, string Password);
-        public record SignUpUser(string UserName, string Password, string SecondPassword);
     }
 }
