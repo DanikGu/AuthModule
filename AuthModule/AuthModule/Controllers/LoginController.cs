@@ -18,11 +18,19 @@ namespace AuthModule.Controllers
         {
             _context = context;
         }
+        [HttpGet]
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Login()
         {
             return View();
         }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
         [AllowAnonymous]
         public JsonResult Login(LoginUser loginUser, string redirectUrl = "/")
         {
@@ -37,6 +45,7 @@ namespace AuthModule.Controllers
                 return new JsonResult(new { Succsess = true });
             }
         }
+        [HttpPost]
         [AllowAnonymous]
         public JsonResult SignUp(SignUpUser signUpUser, string redirectUrl = "/") {
             if (signUpUser == null) {

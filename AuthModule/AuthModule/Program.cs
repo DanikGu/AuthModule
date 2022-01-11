@@ -33,8 +33,16 @@ app.MapGet("/", (HttpContext context) =>
 {
     var user = context.User.Identity;
     if (user is not null && user.IsAuthenticated)
-        return $"UserName: {user.Name}";
-    else return "Пользователь не аутентифицирован.";
+    {
+        context.Response.WriteAsync($"<h3>UserName: {user.Name}</h3>");
+        context.Response.WriteAsync("<a href='/login/logout'>Logout</a>");
+       // return $"UserName: {user.Name}";
+    }
+    else
+    {
+        context.Response.WriteAsync($"<h3>Un authorized</h3>");
+        context.Response.WriteAsync("<a href='/login/login'>Login</a>");
+    }
 });
 
 app.Run();
