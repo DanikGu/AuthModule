@@ -13,3 +13,11 @@ build_property.RazorLangVersion = 6.0
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Danik\source\repos\AuthModule\AuthModule\AuthModule
 build_property._RazorSourceGeneratorDebug = 
+
+[c:/Users/Danik/source/repos/AuthModule/AuthModule/AuthModule/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Danik/source/repos/AuthModule/AuthModule/AuthModule/Views/Login/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

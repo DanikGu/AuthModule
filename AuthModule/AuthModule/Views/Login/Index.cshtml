@@ -1,0 +1,18 @@
+﻿@using(Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <label for="Username">User Name</label>
+    <input type="text" name = "Username"  id = "Username"/>
+    <label for="Password">Password</label>
+    <input type="text" name = "Password" id = "Password"/>
+    <input type = "submit" value="Login"/>
+}
+@using(Html.BeginForm("SignUp", "Login", FormMethod.Post))
+{
+    <label for="Username">User Name</label>
+    <input type="text" name = "Username"  id = "Username"/>
+    <label for="Password">Password</label>
+    <input type="text" name = "Password" id = "Password"/>
+    <label for="SecondPassword">Repeat password</label>
+    <input type="text" name = "SecondPassword" id = "SecondPassword"/>
+    <input type = "submit" value="SignUp"/>
+}
