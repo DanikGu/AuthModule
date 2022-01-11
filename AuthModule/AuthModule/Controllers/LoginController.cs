@@ -24,20 +24,21 @@ namespace AuthModule.Controllers
             return View();
         }
         [AllowAnonymous]
-        public JsonResult Login(LoginUser loginUser)
+        public JsonResult Login(LoginUser loginUser, string redirectUrl = "/")
         {
-            User user = _context.User.FirstOrDefault(user => user.UserName == loginUser.UserName && user.Password == CreateHashString.GetHashString(loginUser.Password ?? ""));
+            User? user = _context?.User?.FirstOrDefault(user => user.UserName == loginUser.UserName && user.Password == CreateHashString.GetHashString(loginUser.Password ?? ""));
             if (user == null) {
                 return new JsonResult(new { Succsess = false, Message = "User not found" } );
             }
             else {
                 user.IsAuthenticated = true;
                 HttpContext.Session.Set("User", user);
+                Response.Redirect(redirectUrl);
                 return new JsonResult(new { Succsess = true });
             }
         }
         [AllowAnonymous]
-        public JsonResult SignUp(SignUpUser signUpUser) {
+        public JsonResult SignUp(SignUpUser signUpUser, string redirectUrl = "/") {
             if (signUpUser == null) {
                 return new JsonResult(new { Succsess = false, Message = "User data are empty" });
             }
@@ -53,6 +54,7 @@ namespace AuthModule.Controllers
             HttpContext.Session.Set("User", newUser);
             _context.User?.Add(newUser);
             _context.SaveChangesAsync();
+            Response.Redirect(redirectUrl);
             return new JsonResult(new { Succsess = true });
 
         }
