@@ -56,11 +56,11 @@ namespace AuthModule.Controllers
             _context.SaveChangesAsync();
             Response.Redirect(redirectUrl);
             return new JsonResult(new { Succsess = true });
-
         }
         
-        public ActionResult Logout() {
-            return View();
+        public void Logout(string redirectUrl = "/") {
+            HttpContext.Session.Set("User", new User());
+            Response.Redirect(redirectUrl);
         }
     }
 }
