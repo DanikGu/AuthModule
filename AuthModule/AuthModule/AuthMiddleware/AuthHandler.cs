@@ -24,7 +24,8 @@ namespace AuthModule.AuthMiddleware
                 var claims = new[] {
                     new Claim(ClaimTypes.NameIdentifier, GetUser().UserName ?? throw new Exception("Username empty")),
                     new Claim(ClaimTypes.Name, GetUser().UserName ?? throw new Exception("Username empty")),
-                    new Claim(ClaimTypes.Hash, GetUser().Password ?? throw new Exception("Password empty"))
+                    new Claim(ClaimTypes.Hash, GetUser().Password ?? throw new Exception("Password empty")),
+                    new Claim(ClaimTypes.Role, "User")
                 };
                 var identity = new ClaimsIdentity(claims, AuthScheme.DefaultScheme);
                 var principal = new ClaimsPrincipal(identity);

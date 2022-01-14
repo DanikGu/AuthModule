@@ -66,7 +66,7 @@ namespace AuthModule.Controllers
             Response.Redirect(redirectUrl);
             return new JsonResult(new { Succsess = true });
         }
-        
+        [Authorize(Roles = "User")]
         public void Logout(string redirectUrl = "/") {
             HttpContext.Session.Set("User", new User());
             Response.Redirect(redirectUrl);
