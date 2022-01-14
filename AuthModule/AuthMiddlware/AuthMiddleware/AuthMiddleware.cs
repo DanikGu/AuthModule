@@ -1,5 +1,7 @@
 ﻿using AuthModule.Model;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace AuthModule.AuthMiddleware
 {

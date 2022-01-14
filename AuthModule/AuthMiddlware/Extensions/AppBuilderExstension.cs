@@ -1,4 +1,5 @@
-﻿
+﻿using Microsoft.AspNetCore.Builder;
+
 namespace AuthModule.Extensions
 {
     public static class AppBuilderExstension
