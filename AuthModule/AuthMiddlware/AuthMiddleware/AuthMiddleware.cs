@@ -15,7 +15,7 @@ namespace AuthModule.AuthMiddleware
             _next = next;
             _logger = LoggerFactory.CreateLogger<AuthMiddleware>();
         }
-        public async Task Invoke(HttpContext httpContext, IAuthenticationService authenticationService, UsersDbContext usersDb)
+        public async Task Invoke(HttpContext httpContext, IAuthenticationService authenticationService)
         {
             var authenticated = await authenticationService.AuthenticateAsync(httpContext, AuthScheme.DefaultScheme);
             _logger.LogInformation("Access Status：" + authenticated.Succeeded);
