@@ -1,9 +1,9 @@
-﻿using AuthModule.Model;
+﻿using AuthMiddlware.Model;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace AuthModule.AuthMiddleware
+namespace AuthMiddlware.AuthMiddleware
 {
 
     public class AuthMiddleware

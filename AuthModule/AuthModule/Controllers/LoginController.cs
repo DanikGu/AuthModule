@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
-using AuthModule.AuthMiddleware;
+using AuthMiddlware.AuthMiddleware;
+using AuthMiddlware.Model;
+using AuthMiddlware.Extensions;
+using AuthMiddlware.Helpers;
 using AuthModule.Model;
 using AuthModule.Helpers;
-using AuthModule.Extensions;
 
 namespace AuthModule.Controllers
 {
@@ -40,7 +42,7 @@ namespace AuthModule.Controllers
             }
             else {
                 user.IsAuthenticated = true;
-                HttpContext.Session.Set("User", user);
+                new LoginLogoutHelper().Login(user, HttpContext);
                 Response.Redirect(redirectUrl);
                 return new JsonResult(new { Succsess = true });
             }
@@ -60,7 +62,7 @@ namespace AuthModule.Controllers
                 UserName = signUpUser.UserName,
                 Password = CreateHashString.GetHashString(signUpUser.Password)
             };
-            HttpContext.Session.Set("User", newUser);
+            new LoginLogoutHelper().Login(newUser, HttpContext);
             _context.User?.Add(newUser);
             _context.SaveChangesAsync();
             Response.Redirect(redirectUrl);
@@ -68,7 +70,7 @@ namespace AuthModule.Controllers
         }
         [Authorize(Roles = "User")]
         public void Logout(string redirectUrl = "/") {
-            HttpContext.Session.Set("User", new User());
+            new LoginLogoutHelper().Logout(HttpContext);
             Response.Redirect(redirectUrl);
         }
     }

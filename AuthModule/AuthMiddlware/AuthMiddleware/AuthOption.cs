@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 
-namespace AuthModule.AuthMiddleware
+namespace AuthMiddlware.AuthMiddleware
 {
     public class AuthOption: AuthenticationSchemeOptions
     {

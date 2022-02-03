@@ -1,13 +1,13 @@
-﻿using AuthModule.Model;
+﻿using AuthMiddlware.Model;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
-using AuthModule.Extensions;
+using AuthMiddlware.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 
-namespace AuthModule.AuthMiddleware
+namespace AuthMiddlware.AuthMiddleware
 {
     public class AuthHandler : AuthenticationHandler<AuthOption>
     {

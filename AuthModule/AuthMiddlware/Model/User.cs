@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AuthModule.Model
+namespace AuthMiddlware.Model
 {
     public class User
     {

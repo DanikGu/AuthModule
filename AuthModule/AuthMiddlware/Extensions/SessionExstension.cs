@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 
-namespace AuthModule.Extensions
+namespace AuthMiddlware.Extensions
 {
     public static class SessionExtensions
     {

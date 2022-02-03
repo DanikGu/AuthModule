@@ -1,5 +1,5 @@
-﻿using AuthModule.AuthMiddleware;
-using AuthModule.Extensions;
+﻿using AuthMiddlware.AuthMiddleware;
+using AuthMiddlware.Extensions;
 using AuthModule.Model;
 using Microsoft.EntityFrameworkCore;
 

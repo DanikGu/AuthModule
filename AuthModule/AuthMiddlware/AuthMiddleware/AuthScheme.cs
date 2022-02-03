@@ -1,4 +1,4 @@
-﻿namespace AuthModule.AuthMiddleware
+﻿namespace AuthMiddlware.AuthMiddleware
 {
     public static class AuthScheme
     {

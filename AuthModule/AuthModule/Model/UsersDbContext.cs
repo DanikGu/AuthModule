@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using AuthMiddlware.Model;
 namespace AuthModule.Model
 {
     public class UsersDbContext : DbContext

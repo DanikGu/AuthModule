@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
-
-namespace AuthModule.Extensions
+using AuthMiddlware.AuthMiddleware;
+namespace AuthMiddlware.Extensions
 {
     public static class AppBuilderExstension
     {
